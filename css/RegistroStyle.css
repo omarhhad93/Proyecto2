@@ -1,0 +1,59 @@
+body {
+  background: #25455e;
+  color: #fffefe;
+  font-family: Arial, san-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+.formulario:first-child label {
+  margin: 2%;
+  text-align: right;
+}
+
+.formulario:first-child div {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.formulario:first-child div fieldset div {
+  margin-top: 1px;
+}
+
+.formulario:first-child div fieldset input, .formulario:first-child div fieldset textarea {
+  border: 1px #00bcd4 solid;
+  border-radius: 0px;
+  padding: 10px;
+  width: 500px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #00bcd4;
+}
+
+.formulario:first-child div fieldset input:focus, .formulario:first-child div fieldset textarea:focus {
+  background: white;
+  color: black;
+}
+
+.formulario:first-child div fieldset .submit {
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #00BCD4;
+  border-radius: 20px;
+  border: 2px solid #2196F3;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+}
+
+.formulario:first-child div fieldset .submit:hover {
+  color: #2196F3;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=RegistroStyle.css.map */

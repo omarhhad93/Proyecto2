@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" media="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> PROYECTO 2</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PROYECTO 2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="BusquedaUsu.html">Búsqueda de Usuario</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Búsqueda">
+                    <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                </form>
+                <div class="d-flex" role="search" style="margin-left: 60px;">
+                    <div id="miDiv"></div>
+                </div>
+            </div>
+        </div>
+    </nav></br></br></br>
+
+    <div class="container">
+        <form class="row g-3 needs-validation" novalidate id="addProduct">
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip01" class="form-label">ID</label>
+                <input type="number" class="form-control" placeholder="Identificador" required id="idProducto">
+                <div class="invalid-tooltip">
+                    Por Favor Ingrese Identificador
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" required id="nombreProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese un Nombre de Producto
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Marca</label>
+                <input type="text" class="form-control" placeholder="Marca" required id="marcaProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese una Marca
+                </div>
+            </div>
+            <div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="estado" id="disponible" value="1"
+                        checked>
+                    <label class="form-check-label" for="1">
+                        Disponible
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="estado" id="noDisponible" value="0">
+                    <label class="form-check-label" for="0">
+                        No Disponible
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Descuento</label>
+                <input type="text" class="form-control" placeholder="Descuento" required id="descuentoProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese Descuento
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Precio Descuento</label>
+                <input type="text" class="form-control" placeholder="Precio Descuento" required
+                    id="precioDescuentoProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese un precio con Descuento
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Descripción</label>
+                <input type="text" class="form-control" placeholder="Descripción" required id="descripcionProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese una Descripción
+                </div>
+            </div>
+            <div class="col-md-4 position-relative">
+                <label for="validationTooltip02" class="form-label">Cantidad</label>
+                <input type="text" class="form-control" placeholder="Cantidad" required id="cantidadProducto">
+                <div class="invalid-tooltip">
+                    Por favor ingrese Cantidad
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="file" class="form-control" id="inputGroupFile01">
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Agregar Producto</button>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/Logout.js"></script>
+    <script type="module" src="../js/RegistroProd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>    
+</body>
+
+</html>
