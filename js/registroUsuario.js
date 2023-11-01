@@ -71,7 +71,7 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
 
             const identificadorInt = parseInt(identificador, 10);
 
-            fetch(`http://localhost:3000/api/registro/${identificadorInt}`, requestOptions)
+            fetch(`https://apisproyecto.onrender.com/api/registro/${identificadorInt}`, requestOptions)
                 .then(response => {
                     if (!response.ok) {
                         window.alert("No se pudo añadir al usuario");

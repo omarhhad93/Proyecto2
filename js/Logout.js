@@ -7,7 +7,7 @@ if (token) {
 
     document.getElementById("logoutButton").addEventListener("click", function () {
         localStorage.removeItem("token");
-        window.location.href = "./LogIn.html";
+        window.location.href = "../LogIn.html";
     });
 }
 

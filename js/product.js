@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             redirect: 'follow'
         };
 
-        fetch(`http://localhost:3000/api/productos`, requestOptions)
+        fetch(`https://apisproyecto.onrender.com/api/productos`, requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('La solicitud de la API falló');
@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     } else {
         window.alert("Token no disponible, por favor inice sesion");
+        window.location.href = "../LogIn.html";
     }
 
     

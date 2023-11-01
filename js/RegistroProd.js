@@ -35,7 +35,7 @@ document.getElementById("addProduct").addEventListener("submit", function (e) {
             redirect: 'follow'
         };
 
-        fetch(`http://localhost:3000/api/Producto/${identificador}`, requestOptions)
+        fetch(`https://apisproyecto.onrender.com/api/Producto/${identificador}`, requestOptions)
             .then(response => {
                 if (!response.ok) {
                     window.alert("No se pudo añadir producto");

@@ -1,3 +1,13 @@
+import { token } from "./token.js";
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!token) {
+        window.alert("Token no disponible, por favor inice sesion");
+        window.location.href = "../LogIn.html";
+    }
+});
+
 // document.addEventListener('DOMContentLoaded', () => {
 
 // 	// Variables

@@ -18,12 +18,12 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     redirect: 'follow'
   };
 
-  fetch("http://localhost:3000/api/login", requestOptions)
+  fetch("https://apisproyecto.onrender.com/api/login", requestOptions)
     .then((response) => response.json())
     .then((data) => {
       localStorage.setItem("token", data.token);
       // window.location.href = "index.html";
-      window.location.href = "RegistroProd.html";
+      window.location.href = "./html/RegistroProd.html";
     })
     .catch((error) => {
       console.error("Error de inicio de sesión:", error);

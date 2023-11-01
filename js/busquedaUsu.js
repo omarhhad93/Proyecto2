@@ -16,7 +16,7 @@ document.getElementById("searchUser").addEventListener("submit", function (e) {
             redirect: 'follow'
         };
 
-        fetch(`http://localhost:3000/api/perfil/${identificador}`, requestOptions)
+        fetch(`https://apisproyecto.onrender.com/api/perfil/${identificador}`, requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('La solicitud de la API falló');
