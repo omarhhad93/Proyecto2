@@ -29,3 +29,13 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
       console.error("Error de inicio de sesión:", error);
     });
 });
+
+    // document.getElementById('miDiv').innerHTML = '<button class="btn btn-outline-success" type="submit" id="logoutButton">Cerrar Sesión</button>';
+    document.getElementById('miDiv').innerHTML = '<button class="btn btn-outline-success" id="logoutButton" style="display: none">Crear Usuario</button>';    
+    
+    document.getElementById("logonButton").style.display = "block";
+
+    document.getElementById("logoutButton").addEventListener("click", function () {
+        localStorage.removeItem("token");
+        window.location.href = "../html/RegistroProd.html";
+    });
