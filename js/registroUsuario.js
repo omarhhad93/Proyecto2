@@ -13,9 +13,12 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
     var CorreoElectronico = document.getElementById("CorreoElectronico").value;
     var clave = document.getElementById("clave").value;
     const fechaInput = document.getElementById("fechanacimiento");
-
+    var confirmarClave = document.getElementById("confirmarClave").value;
+    
     var validacionCorreo = false;
     var validacionTelefono = false;
+    var validarContrasenaSeguridad = false;
+    var validarContrasenaIgualdad = false;
 
     const fechaEnFormatoISO = fechaInput.value;
     const partesFecha = fechaEnFormatoISO.split("-");
@@ -26,11 +29,8 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
         const dia = partesFecha[2];
 
         fechaFormateada = `${dia}/${mes}/${anio}`;
-
-        console.log("Fecha formateada: " + fechaFormateada);
     }
 
-    console.log(CorreoElectronico)
     if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(CorreoElectronico)) {
         validacionCorreo = true;
     } else {
@@ -38,15 +38,44 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
         validacionCorreo = false;
     }
 
-    console.log(numeroTelefono)
     if (/^\d{8}$/i.test(numeroTelefono)) {
         validacionTelefono = true;
     } else {
         alert("Teléfono no válido");
         validacionTelefono = false;
     }
+    console.log(clave);
+    console.log(confirmarClave);
+    if (clave.value !== confirmarClave.value) {
+        alert("Contraseñas no coinciden");
+        validarContrasenaIgualdad = false;
+    } else {
+        validarContrasenaIgualdad = true
+    }
 
-    if (validacionCorreo == true && validacionTelefono == true) {
+    function validarContrasena(contrasena) {
+        const regexLength = /.{8,}/;
+        const regexUppercase = /[A-Z]/;
+        const regexLowercase = /[a-z]/;
+        const regexNumber = /[0-9]/;
+        const regexSpecialChar = /[^A-Za-z0-9]/;
+    
+        return (
+            regexLength.test(contrasena) &&
+            regexUppercase.test(contrasena) &&
+            regexLowercase.test(contrasena) &&
+            regexNumber.test(contrasena) &&
+            regexSpecialChar.test(contrasena)
+        );
+    }
+
+    validarContrasenaSeguridad = validarContrasena(clave);
+
+    if (!validarContrasenaSeguridad) {
+        alert("La contraseña debe cumplircon: Tener al menos 8 caracteres. Contener al menos una letra mayúscula. Contener al menos una letra minúscula. Incluir al menos un número. Contener al menos un carácter especial (por ejemplo, !, @, #, $, etc.).");
+    }
+
+    if (validacionCorreo && validacionTelefono && validarContrasenaIgualdad && validarContrasenaSeguridad) {
         var user = {            
             "nombre": nombre,
             "apellido": apellido,

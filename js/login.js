@@ -23,7 +23,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     .then((data) => {
       localStorage.setItem("token", data.token);
       // window.location.href = "index.html";
-      window.location.href = "./html/CarritoProd.html";
+      window.location.href = "./html/RegistroProd.html";
     })
     .catch((error) => {
       console.error("Error de inicio de sesión:", error);
