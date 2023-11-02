@@ -2,7 +2,7 @@ import { token } from './token.js';
 console.log(token)
 
 document.getElementById("addUser").addEventListener("submit", function (e) {
-    e.preventDefault();    
+    e.preventDefault();
     // var identificador = document.getElementById("dpi").value;
     var identificador = parseInt(document.getElementById("dpi").value, 10);
     var nombre = document.getElementById("nombre").value;
@@ -14,7 +14,7 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
     var clave = document.getElementById("clave").value;
     const fechaInput = document.getElementById("fechanacimiento");
     var confirmarClave = document.getElementById("confirmarClave").value;
-    
+
     var validacionCorreo = false;
     var validacionTelefono = false;
     var validarContrasenaSeguridad = false;
@@ -59,7 +59,7 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
         const regexLowercase = /[a-z]/;
         const regexNumber = /[0-9]/;
         const regexSpecialChar = /[^A-Za-z0-9]/;
-    
+
         return (
             regexLength.test(contrasena) &&
             regexUppercase.test(contrasena) &&
@@ -76,7 +76,7 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
     }
 
     if (validacionCorreo && validacionTelefono && validarContrasenaIgualdad && validarContrasenaSeguridad) {
-        var user = {            
+        var user = {
             "nombre": nombre,
             "apellido": apellido,
             "fechanacimiento": fechaFormateada,
@@ -86,37 +86,33 @@ document.getElementById("addUser").addEventListener("submit", function (e) {
             "CorreoElectronico": CorreoElectronico,
             "clave": clave
         }
-    
-        if (token) {        
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'token': `${token}`,
-                },
-                body: JSON.stringify(user),
-                redirect: 'follow'
-            };
 
-            const identificadorInt = parseInt(identificador, 10);
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': `${token}`,
+            },
+            body: JSON.stringify(user),
+            redirect: 'follow'
+        };
 
-            fetch(`https://apisproyecto.onrender.com/api/registro/${identificadorInt}`, requestOptions)
-                .then(response => {
-                    if (!response.ok) {
-                        window.alert("No se pudo añadir al usuario");
-                        throw new Error('Solicitud fallida');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    window.alert("Registro exitoso");
-                })
-                .catch(error => {
-                    window.alert("Se produjo un error desconocido, por favor intente nuevamente.");
-                    console.error(error);
-                });
-        } else {
-            window.alert("Token no disponible, por favor inice sesion");
-        }
+        const identificadorInt = parseInt(identificador, 10);
+
+        fetch(`https://apisproyecto.onrender.com/api/registro/${identificadorInt}`, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    window.alert("No se pudo añadir al usuario");
+                    throw new Error('Solicitud fallida');
+                }
+                return response.json();
+            })
+            .then(data => {
+                window.alert("Registro exitoso");
+            })
+            .catch(error => {
+                window.alert("Se produjo un error desconocido, por favor intente nuevamente.");
+                console.error(error);
+            });
     }
 });
