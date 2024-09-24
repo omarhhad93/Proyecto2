@@ -21,9 +21,13 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   fetch("https://apisproyecto.onrender.com/api/login", requestOptions)
     .then((response) => response.json())
     .then((data) => {
-      localStorage.setItem("token", data.token);
-      // window.location.href = "index.html";
-      window.location.href = "./html/CarritoProd.html";
+      if (data.token == "undefined") {
+        alert("Credenciales incorrectas, por favor verifique.");
+      } else {
+        // Guardar el token y redirigir a la página de carrito si el login es exitoso
+        localStorage.setItem("token", data.token);
+        window.location.href = "./html/CarritoProd.html";
+      }
     })
     .catch((error) => {
       console.error("Error de inicio de sesión:", error);
